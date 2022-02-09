@@ -27,7 +27,7 @@ namespace Collections_Prac
             Random rand = new Random();
             foreach (var name in strArr)
             {
-                userInfo.Add(name, iceCreams[rand.Next(0,3)]);
+                userInfo.Add(name, iceCreams[rand.Next(0,4)]);
             }
             foreach (KeyValuePair<string,string> entry in userInfo)
             {
