@@ -67,7 +67,7 @@ namespace Deck_of_Cards
 
     class Player
     {
-        public string Name {get; set;}
+        public string Name;
 
         public Player(string name)
         {
@@ -88,6 +88,7 @@ namespace Deck_of_Cards
                 Hand.RemoveAt(index);
                 return discard;
             }
+            Console.WriteLine("Card at index doesn't exist.");
             return null;
         }
     }
@@ -106,11 +107,7 @@ namespace Deck_of_Cards
             }
             card = brent.Discard(3);
             Console.WriteLine($"{brent.Name} Discarded {card.StringVal} {card.Suit}");
-            card = brent.Discard(4);
-            if (card == null)
-            {
-                Console.WriteLine("Card at index doesn't exist.");
-            }
+            // card = brent.Discard(4);
         }
     }
 }
