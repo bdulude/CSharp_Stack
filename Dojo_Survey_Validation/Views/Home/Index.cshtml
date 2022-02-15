@@ -1,30 +1,39 @@
 ﻿@{
     ViewData["Title"] = "Dojo Survey";
 }
+@model Survey
 
-<div style="border: 1px black; width: 300px; height: 300px;">
-        <form action="/submit" method="POST">
-            <label for="name">Your Name:</label>
-            <input type="text" name="name">
-            <br>
-            <label for="location">Dojo Location:</label>
-            <select name="location">
-                <option value="Seattle">Seattle</option>
-                <option value="Los Angeles">Los Angeles</option>
-                <option value="San Jose">San Jose</option>
-                <option value="Online">Online</option>
-            </select>
-            <br>
-            <label for="lang">Favorite Language:</label>
-            <select name="lang">
+<div style="width: 300px; height: 300px;">
+    <form action="/submit" method="POST">
+        <div class="form-group">
+            <span class="text-danger" asp-validation-for="Name"></span>
+            <label asp-for="Name">Your Name:</label>
+            <input type="text" asp-for="Name">
+        </div>
+        <div class="form-group">
+        <span class="text-danger" asp-validation-for="Location"></span>
+        <label asp-for="Location">Dojo Location:</label>
+        <select asp-for="Location">
+            <option value="Seattle">Seattle</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Online">Online</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Lang"></span>
+            <label asp-for="Lang">Favorite Language:</label>
+            <select asp-for="Lang">
                 <option value="C#">C#</option>
                 <option value="Python">Python</option>
                 <option value="Javascript">Javascript</option>
             </select>
-            <br>
-            <label for="comment">Comment (Optional):</label>
-            <textarea name="comment" cols="32" rows="5"></textarea>
-            <br>
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Comment"></span>
+            <label asp-for="Comment">Comment (Optional):</label>
+            <textarea asp-for="Comment" cols="32" rows="5"></textarea>
             <input type="submit" value="Submit">
-        </form>
-    </div>
+        </div>
+    </form>
+</div>

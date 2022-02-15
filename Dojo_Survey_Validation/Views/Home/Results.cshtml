@@ -2,11 +2,14 @@
     ViewData["Title"] = "Dojo Survey";
 }
 
+@model Survey
 
 @{
-    <h1 style="">Submitted Info</h1>
-    <p>Name: @ViewBag.Name</p>
-    <p>Dojo Location: @ViewBag.Location</p>
-    <p>Favorite Language: @ViewBag.Lang</p>
-    <p>Comment: @ViewBag.Comment</p>
+    <div style="border: 1px black; width: 300px; height: 300px;">
+        <h1>Submitted Info</h1>
+        <p>Name: @Model.Name</p>
+        <p>Dojo Location: @Model.Location</p>
+        <p>Favorite Language: @Model.Lang</p>
+        <p>Comment: @Model.Comment</p>
+    </div>
 }
