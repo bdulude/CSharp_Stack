@@ -1,8 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Passcode Generator";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form action="/" method="GET">
+        <div class="form-group">
+            @* <label for="passcode">Random Passcode (Passcode # @Context.Session.GetInt("Number"))</label> *@
+            <label for="passcode">Random Passcode (Passcode # @ViewBag.number)</label>
+            <br>
+            <input type="text" name="passcode" value="@ViewBag.Passcode">
+        </div>
+        <input type="submit" value="Generate">
+    </form>
 </div>
