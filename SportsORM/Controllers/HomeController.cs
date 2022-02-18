@@ -58,6 +58,9 @@ namespace SportsORM.Controllers
             ViewBag.TTeams = _context.Teams
             .Where(t => t.TeamName.Substring(0,1) == "T").ToList();
 
+            // ViewBag.TTeams = _context.Teams
+            // .Where(t => t.TeamName[0] == 'T').ToList();
+
             ViewBag.Alpha = _context.Teams.OrderBy(al => al.Location);
 
             ViewBag.Reverse = _context.Teams.OrderByDescending(r => r.TeamName);
