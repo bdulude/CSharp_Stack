@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "View Dish";
+}
+
+@* @model Dish *@
+
+<div class="text-center">
+    <h1 class="display-5 mb-4">@ViewBag.RetrievedDish.Name</h1>
+    <h3 class="display-6 mb-4">by Chef @ViewBag.RetrievedDish.Chef</h3>
+</div>
+<hr>
+<div class="container">
+    <p class="text-center">@ViewBag.RetrievedDish.Description</p>
+    <br>
+    <p><strong>Calories:</strong> @ViewBag.RetrievedDish.Calories</p>
+    <br>
+    <p><strong>Tastiness:</strong> @ViewBag.RetrievedDish.Tastiness</p>
+    <br>
+    <div class="d-flex justify-content-around">
+        <a href="/delete/@ViewBag.RetrievedDish.DishId" class="btn btn-danger">Delete</a>
+        <a href="/edit/@ViewBag.RetrievedDish.DishId" class="btn btn-warning">Edit</a>
+    </div>
+</div>

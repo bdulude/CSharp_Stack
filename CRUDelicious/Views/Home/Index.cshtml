@@ -1,8 +1,25 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "CRUDelicious";
 }
 
+@* @model Dish *@
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 mb-4">Welcome to CRUDelicious</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <h5>Check out some recent dishes!</h5>
+            <hr>
+            @foreach (var dish in ViewBag.AllDishes)
+            {
+                <p><a href="/@dish.DishId">@dish.Name</a> by @dish.Chef</p>
+            }
+        </div>
+        <div class="col-md">
+            <a class="btn btn-success" href="/new">Add a Dish</a>
+        </div>
+    </div>
 </div>
