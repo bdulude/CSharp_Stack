@@ -9,12 +9,12 @@ namespace Login_and_Registration.Models
         [Key]
         public int UserId { get; set; }
 
-        [Required(ErrorMessage = "is required")]
+        [Required]
         [MinLength(2, ErrorMessage = "must be at least 2 characters")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "is required")]
+        [Required]
         [MinLength(2, ErrorMessage = "must be at least 2 characters")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
@@ -31,7 +31,7 @@ namespace Login_and_Registration.Models
         [NotMapped]
         [Compare("Password")]
         [DataType(DataType.Password)]
-        public string Confirm {get;set;}
+        public string Confirm { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
     }
