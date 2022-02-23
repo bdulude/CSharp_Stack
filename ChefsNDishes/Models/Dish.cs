@@ -15,7 +15,6 @@ namespace ChefsNDishes.Models
 
         
         [Required(ErrorMessage = "Required")]
-        [NotMapped]
         public int ChefId {get; set;}
         public Chef Chef {get; set;}
 

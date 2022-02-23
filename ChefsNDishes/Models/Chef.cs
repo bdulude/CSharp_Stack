@@ -25,6 +25,7 @@ namespace ChefsNDishes.Models
 
         public int age()
         {
+            // return DateTime.Now.Year - this.DateOfBirth.Year;
             if (this.DateOfBirth != null)
             {
                 DateTime dob = this.DateOfBirth ?? DateTime.Now;
