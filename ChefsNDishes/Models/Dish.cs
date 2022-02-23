@@ -13,9 +13,11 @@ namespace ChefsNDishes.Models
         [Required(ErrorMessage = "Required")]
         public string Name {get; set;}
 
+        
         [Required(ErrorMessage = "Required")]
         [NotMapped]
-        public string Chef {get; set;}
+        public int ChefId {get; set;}
+        public Chef Chef {get; set;}
 
         [Required(ErrorMessage = "Required")]
         [Range(1, 5)]
@@ -31,8 +33,6 @@ namespace ChefsNDishes.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
-
-        public Chef Creator {get; set;}
     }
 
 }

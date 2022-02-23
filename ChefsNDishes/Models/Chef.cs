@@ -18,10 +18,21 @@ namespace ChefsNDishes.Models
 
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
-        public DateTime? Date { get; set; }
+        // public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-        public List<Dish> createdDishes {get; set;}
+        public int age()
+        {
+            if (this.DateOfBirth != null)
+            {
+                DateTime dob = this.DateOfBirth ?? DateTime.Now;
+                return DateTime.Now.Year - dob.Year;
+            }
+            return -1;
+        }
+
+        public List<Dish> CreatedDishes {get; set;}
     }
 }
