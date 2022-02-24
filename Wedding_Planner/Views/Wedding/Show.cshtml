@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Wedding Planner";
+}
+
+@model Wedding
+
+<div class="container">
+    <h1 class="text-center">Plan Your Wedding</h1>
+    <hr />
+    <div class="col-md">
+        <p>Date: @Model.WeddingDate</p>
+        <p>Guests:</p>
+        <br>
+        @foreach (var rsvp in Model.RSVPs)
+        {
+            <p>@rsvp.User.FirstName @rsvp.User.LastName</p>
+            <br>
+        }
+    </div>
+
+
+
+</div>

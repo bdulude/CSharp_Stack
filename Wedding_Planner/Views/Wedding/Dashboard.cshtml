@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Wedding Planner!";
+}
+
+@model List<Wedding>
+
+<div class="container">
+    <h1 class="text-center">Welcome to the Wedding Planner</h1>
+
+    <table class="table">
+        <thead>
+            <th>Wedding</th>
+            <th>Date</th>
+            <th>Guests</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            @foreach (Wedding wedding in Model)
+            {
+                <tr>
+                    <td><a href="/wedding/@wedding.WeddingId">@wedding.Wedder1 & @wedding.Wedder2</a></td>
+                    <td>@wedding.WeddingDate.ToString("MM/dd/yyyy")</td>
+                    <td>@wedding.RSVPs.Count</td>
+                    @if (wedding.CreatorId == Context.Session.GetInt32("UserId"))
+                    {
+                        <td><a href="/wedding/delete/@wedding.WeddingId">Delete</a></td>
+                    }
+                    else
+                    {
+                        bool found = false;
+                        @foreach (var rsvp in wedding.RSVPs)
+                        {
+                            @if (rsvp.UserId == Context.Session.GetInt32("UserId"))
+                            {
+                                <td><a href="/unRSVP/@wedding.WeddingId">un-RSVP</a></td>
+                                found = true;
+                            }
+                        }
+                        @if (!found)
+                        {
+                            <td><a href="/RSVP/@wedding.WeddingId">RSVP</a></td>
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/wedding/new" class="btn btn-success">New Wedding</a>
+</div>

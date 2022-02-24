@@ -6,12 +6,14 @@ namespace Wedding_Planner.Models
     {
         [Required]
         [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Email")]
+        public string LoginEmail { get; set; }
 
 
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         [MinLength(8, ErrorMessage="Password must be 8 characters or longer!")]
-        public string Password { get; set; }
+        public string LoginPassword { get; set; }
     }
 }

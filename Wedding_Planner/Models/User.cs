@@ -32,6 +32,8 @@ namespace Wedding_Planner.Models
         [NotMapped]
         [Compare("Password")]
         [DataType(DataType.Password)]
+        [Required]
+        [Display(Name = "Password Confirm")]
         public string Confirm { get; set; }
 
         public List<RSVP> RSVPs { get; set; }

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Wedding_Planner.Models;
 
 namespace Wedding_Planner.Migrations
 {
     [DbContext(typeof(Wedding_PlannerContext))]
-    partial class Wedding_PlannerContextModelSnapshot : ModelSnapshot
+    [Migration("20220224062610_second")]
+    partial class second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,7 +80,6 @@ namespace Wedding_Planner.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("CreatedAt")
@@ -91,11 +92,9 @@ namespace Wedding_Planner.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Wedder1")
-                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Wedder2")
-                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("WeddingDate")

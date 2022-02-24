@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Wedding_Planner.Models;
 
 namespace Wedding_Planner.Migrations
 {
     [DbContext(typeof(Wedding_PlannerContext))]
-    partial class Wedding_PlannerContextModelSnapshot : ModelSnapshot
+    [Migration("20220224070800_third")]
+    partial class third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
